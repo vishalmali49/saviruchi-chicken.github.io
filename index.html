@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- basic -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- mobile metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!-- site metas -->
+  <title>Saviruchi</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- fevicon -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- style css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Responsive-->
+  <link rel="stylesheet" href="css/responsive.css">  
+  <!-- Scrollbar Custom CSS -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+  <!-- Tweaks for older IEs-->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+</head>
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background: #f2f2f2;
+  
+}
+nav{
+  background: #e67114;
+}
+nav:after{
+  content: '';
+  clear: both;
+  display: table;
+}
+nav .logo{
+  float: left;
+  color: white;
+  font-size: 30px;
+  font-weight: 600px;
+  line-height: 50px;
+  padding-left: 60px;
+}
+nav ul{
+  float: right;
+  margin-right: 200px;
+  list-style: none;
+  position: relative;
+}
+nav ul li{
+  float: left;
+  display: inline-block;
+  background: #e67114;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  line-height: 70px;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
+}
+nav ul li a:hover{
+  color: whit;
+  border-radius: 30px;
+  box-shadow:  0 0 5px white,
+               0 0 10px white;
+}
+nav ul ul li a:hover{
+  box-shadow: none;
+}
+nav ul ul{
+  position: absolute;
+  top: 90px;
+  border-top: 3px solid cyan;
+  opacity: 0;
+  visibility: hidden;
+  transition: top .3s;
+}
+nav ul ul ul{
+  border-top: none;
+}
+nav ul li:hover > ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+nav ul ul li{
+  position: relative;
+  margin: 0px;
+  width: 150px;
+  float: none;
+  display: list-item;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+nav ul ul li a{
+  line-height: 50px;
+}
+nav ul ul ul li{
+  position: relative;
+  top: -60px;
+  left: 150px;
+}
+.show,.icon,input{
+  display: none;
+}
+.fa-plus{
+  font-size: 15px;
+  margin-left: 40px;
+}
+@media all and (max-width: 968px) {
+  nav ul{
+    margin-right: 0px;
+    float: left;
+  }
+  nav .logo{
+    padding-left: 30px;
+    width: 100%;
+  }
+  .show + a, ul{
+    display: none;
+  }
+  nav ul li,nav ul ul li{
+    display: block;
+    width: 100%;
+  }
+  nav ul li a:hover{
+    box-shadow: none;
+  }
+  .show{
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+  }
+  .show:hover{
+    color: cyan;
+  }
+  .icon{
+    display: block;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 40px;
+    line-height: 70px;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  nav ul ul{
+    top: 70px;
+    border-top: 0px;
+    float: none;
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  nav ul ul a{
+    padding-left: 40px;
+  }
+  nav ul ul ul a{
+    padding-left: 80px;
+  }
+  nav ul ul ul li{
+    position: static;
+  }
+  [id^=btn]:checked + ul{
+    display: block;
+  }
+  nav ul ul li{
+    border-bottom: 0px;
+  }
+  span.cancel:before{
+    content: '\f00d';
+  }
+}
+  </style>
+<!-- body -->
+
+<body class="main-layout">
+  <!-- loader  -->
+  <div class="loader_bg">
+    <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+  </div>
+  <!-- end loader -->
+  <!-- header -->
+  <header>
+    <!-- header inner -->
+       <nav>
+      <div class="logo"><img src="images/logo.png" width="120px" height="60px"></div>
+      <label for="btn" class="icon">
+        <span class="fa fa-bars"></span>
+      </label>
+      <input type="checkbox" id="btn">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="about.html">About Us</a></li>
+         <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </nav>
+       <script>
+      $('.icon').click(function(){
+        $('span').toggleClass("cancel");
+      });
+    </script>
+     <!-- end header inner -->
+
+     <!-- end header -->
+     <section class="slider_section">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+
+            <div class="container-fluid padding_dd">
+              <div class="carousel-caption">
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="text-bg">
+                     <span>Welcome To Saviruchi</span>
+                      <h1>Chicken Shop</h1><p>The meat we bring you has no traces of antibiotics, hormones or steroids. This makes our chicken healthy and tender, so that it soaks in any flavour that it’s cooked with. Dive into our offerings of healthy fresh chicken!</p>
+                   
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="images_box">
+                      <figure><img src="images/img4.png"></figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+
+            <div class="container-fluid padding_dd">
+              <div class="carousel-caption">
+
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="text-bg">
+                      <span>Welcome To Saviruchi</span>
+                      <h1>Chicken Shop</h1>
+                      <p>When life gives you 100 reasons to cry show life that you have a chicken biryani to smile</p>
+                      </div>
+                  </div>
+
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="images_box">
+                      <figure><img src="images/img4.png"></figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="carousel-item">
+
+            <div class="container-fluid padding_dd">
+              <div class="carousel-caption ">
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="text-bg">
+                      <span>Welcome To Saviruchi</span>
+                      <h1>Chicken Shop</h1>
+                        <p>And believe me, a good piece of chicken can make anybody believe in the existence of God. </p>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="images_box">
+                      <figure><img src="images/img4.png"></figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+</section>
+</div>
+</header>
+
+
+
+
+          <!-- Javascript files-->
+          <script src="js/jquery.min.js"></script>
+          <script src="js/popper.min.js"></script>
+          <script src="js/bootstrap.bundle.min.js"></script>
+          <script src="js/jquery-3.0.0.min.js"></script>
+          <script src="js/plugin.js"></script>
+          <!-- sidebar -->
+          <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+          <script src="js/custom.js"></script>
+          <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+        
+</body>
+
+</html>
